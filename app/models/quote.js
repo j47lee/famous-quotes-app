@@ -6,4 +6,4 @@ var QuoteSchema = new Schema({
   ,text: String
 });
 
-module.exports = mongoose.model('Qoute', QuoteSchema);
+module.exports = mongoose.model('Quote', QuoteSchema);

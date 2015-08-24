@@ -31,7 +31,7 @@ router.use('/', function(req, res, next){
 
 // @ /api ======================================================================
 router.get('/', function(req, res){
-  res.json({ message: 'Welcome to our API!'});
+  res.json({ message: 'Welcome to my quotes API!'});
 });
 
 // CRUD FOR QUOTES =============================================================

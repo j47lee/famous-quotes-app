@@ -29,13 +29,14 @@ router.use('/', function(req, res, next){
   next();
 });
 
-// @ /api ======================================================================
+// @ root route
 router.get('/', function(req, res){
-  res.json({ message: 'Welcome to my quotes API!'});
+  res.sendFile(__dirname + '/index.html')
+  // res.json({ message: 'Welcome to my quotes API!'});
 });
 
 // CRUD FOR QUOTES =============================================================
-// @ /api/quotes
+// @ /quotes
 router.route('/quotes')
 
   // CREATE A QUOTE
@@ -56,7 +57,7 @@ router.route('/quotes')
     });
   })
 
-// @ /api/quotes/:id
+// @ /quotes/:id
 router.route('/quotes/:id')
 
   // GET ONE QUOTE BY ID
@@ -89,8 +90,8 @@ router.route('/quotes/:id')
   })
 
 // REGISTER ROUTES =============================================================
-// all routes prefixed with /api
-app.use('/api', router);
+// all routes start at root
+app.use('/', router);
 
 // START SERVER ================================================================
 app.listen(port);
